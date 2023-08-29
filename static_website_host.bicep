@@ -20,7 +20,7 @@ param storageSku string = 'Standard_LRS'
 param indexDocumentPath string = 'index.html'
 
 @description('The contents of the web index document.')
-param indexDocumentContents string = '<h1>Example static website</h1>'
+param indexDocumentContents string = '<h1>Example static website test</h1>'
 
 @description('The path to the web error document')
 param errorDocument404Path string = 'error.html'
@@ -29,7 +29,7 @@ param errorDocument404Path string = 'error.html'
 param errorDocument404Contents string = '<h1>Example 404 error page</h1>'
 
 //This is the Storage Account Contributor role
-resource contributorRoleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' = {
+resource contributorRoleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
   name: '17d1049b-9a84-46fb-8f53-869881c3d3ab'
   //scope: subscription()
 }
